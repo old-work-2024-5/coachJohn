@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Calendar, ChevronRight, X } from "lucide-react"
-import type { Event } from "@/data/events"
+import { useState } from "react";
+import Link from "next/link";
+import { Calendar, ChevronRight, X } from "lucide-react";
+import type { Event } from "@/data/events";
 
 interface EventsBannerProps {
-  events: Event[]
+  events: Event[];
 }
 
 export default function EventsBanner({ events }: EventsBannerProps) {
-  const [dismissed, setDismissed] = useState(false)
+  const [dismissed, setDismissed] = useState(false);
 
   if (dismissed || events.length === 0) {
-    return null
+    return null;
   }
 
   return (
@@ -24,7 +24,9 @@ export default function EventsBanner({ events }: EventsBannerProps) {
             <Calendar className="h-6 w-6 hidden sm:block" />
             <div>
               <h3 className="font-bold text-lg">Upcoming Events</h3>
-              <p className="text-sm text-white/90">Don't miss out on our latest community activities</p>
+              <p className="text-sm text-white/90">
+                Don&apos;t miss out on our latest community activities
+              </p>
             </div>
           </div>
 
@@ -40,7 +42,10 @@ export default function EventsBanner({ events }: EventsBannerProps) {
                   <span>•</span>
                   <span>{event.location}</span>
                 </div>
-                <Link href="/events" className="flex items-center gap-1 text-xs font-medium mt-1 hover:underline">
+                <Link
+                  href="/events"
+                  className="flex items-center gap-1 text-xs font-medium mt-1 hover:underline"
+                >
                   View details <ChevronRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -65,6 +70,5 @@ export default function EventsBanner({ events }: EventsBannerProps) {
         <X className="h-4 w-4" />
       </button>
     </section>
-  )
+  );
 }
-

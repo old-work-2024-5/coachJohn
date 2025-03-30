@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Play } from "lucide-react"
+import Image from "next/image"
 
 interface VideoFeatureProps {
   videoId: string
@@ -62,7 +63,7 @@ export default function VideoFeature({ videoId, title, description }: VideoFeatu
             </div>
           ) : (
             <>
-              <img
+              <Image
                 src={thumbnailUrl || `/placeholder.svg?height=720&width=1280`}
                 alt={title}
                 className="w-full h-full object-cover"

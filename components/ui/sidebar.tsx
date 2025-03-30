@@ -136,8 +136,7 @@ export function Sidebar({ className, collapsible = "left", ...props }: SidebarPr
       className={cn(
         "flex h-full w-[270px] flex-col border-r bg-background",
         {
-          "md:w-[270px] md:min-w-[270px]": collapsible === "left",
-          "md:w-[270px] md:min-w-[270px]": collapsible === "right",
+          "md:w-[270px] md:min-w-[270px]": collapsible === "left" || collapsible === "right",
         },
         className,
       )}

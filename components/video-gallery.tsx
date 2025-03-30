@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Play, X, ExternalLink, ChevronDown, ChevronUp } from "lucide-react"
+import Image from "next/image"
 
 interface Video {
   id: string
@@ -178,7 +179,7 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
               </div>
             ) : (
               <>
-                <img
+                <Image
                   src={thumbnails[filteredVideos[0].id] || "/placeholder.svg?height=720&width=1280"}
                   alt={filteredVideos[0].title}
                   className="w-full h-full object-cover"
@@ -219,7 +220,7 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
                   </div>
                 ) : (
                   <>
-                    <img
+                    <Image
                       src={thumbnails[video.id] || "/placeholder.svg?height=720&width=1280"}
                       alt={video.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
