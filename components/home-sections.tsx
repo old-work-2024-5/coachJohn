@@ -422,16 +422,16 @@ function FeaturedPrograms() {
 export function ImpactSection() {
   const impactStats = [
     {
-      value: "2,150+",
+      value: "3,450+",
       description: "Participants engaged annually with no financial barriers",
     },
     {
-      title: "Girls in Sports",
+      title: "870 + Girls in Sports Anually",
       description:
         "Creating inclusive environments for girls to thrive in sports",
     },
     {
-      title: "Youth Leadership",
+      title: "40+ Impact on Youth Leadership",
       description:
         "Empowering young individuals with leadership skills and confidence",
     },
