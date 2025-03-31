@@ -11,20 +11,22 @@ import { useRouter } from "next/navigation"
 // This function would be used to import all images from a directory
 // In a production environment, you would replace this with your actual image data
 const getGalleryImages = () => {
-  // Replace this with the actual list of images in your folder
-  const imageCount = 50; // Total number of images
-  const images = Array.from({ length: imageCount }, (_, i) => ({
+  // Adjust the range to match the actual images in your folder
+  const imageStart = 14; // Starting image number
+  const imageEnd = 56; // Ending image number
+
+  const images = Array.from({ length: imageEnd - imageStart + 1 }, (_, i) => ({
     id: i + 1,
-    src: `/images/gallery/image${i + 1}.webp`, // Ensure the filenames match your folder
-    alt: `Gallery image ${i + 1}`,
+    src: `/images/gallery/image${imageStart + i}.webp`, // Adjusted to match your folder
+    alt: `Gallery image ${imageStart + i}`,
     category:
-      i % 5 === 0
+      (imageStart + i) % 5 === 0
         ? "Community Events"
-        : i % 5 === 1
+        : (imageStart + i) % 5 === 1
         ? "Youth Programs"
-        : i % 5 === 2
+        : (imageStart + i) % 5 === 2
         ? "Sports Activities"
-        : i % 5 === 3
+        : (imageStart + i) % 5 === 3
         ? "Leadership Training"
         : "Senior Programs",
   }));

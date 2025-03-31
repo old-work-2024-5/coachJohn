@@ -67,6 +67,7 @@ export default function VideoFeature({ videoId, title, description }: VideoFeatu
                 src={thumbnailUrl || `/placeholder.svg?height=720&width=1280`}
                 alt={title}
                 className="w-full h-full object-cover"
+                fill
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 

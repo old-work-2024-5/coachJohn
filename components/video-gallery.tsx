@@ -183,6 +183,7 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
                   src={thumbnails[filteredVideos[0].id] || "/placeholder.svg?height=720&width=1280"}
                   alt={filteredVideos[0].title}
                   className="w-full h-full object-cover"
+                  fill
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
@@ -224,6 +225,7 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
                       src={thumbnails[video.id] || "/placeholder.svg?height=720&width=1280"}
                       alt={video.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      fill
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
 
