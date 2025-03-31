@@ -431,7 +431,7 @@ export function ImpactSection() {
         "Creating inclusive environments for girls to thrive in sports",
     },
     {
-      title: "40+ Impact on Youth Leadership",
+      title: "420+ Impact on Youth Leadership",
       description:
         "Empowering young individuals with leadership skills and confidence",
     },
