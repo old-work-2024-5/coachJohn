@@ -468,6 +468,38 @@ export function ImpactSection() {
   return (
     <section id="impact" className="py-16 bg-white">
       <div className="container px-4 md:px-6">
+        {/* New Impact Narrative Section */}
+        <div className="mb-16 bg-gradient-to-r from-blue-50 to-red-50 p-8 rounded-xl shadow-md border-l-4 border-blue-600">
+          <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 mb-4 text-center">Removing Barriers to Full Participation</h2>
+          <p className="text-gray-800 text-lg mb-4 text-center max-w-3xl mx-auto">
+            Each year, Coach John Leadership & Community Engagement Initiative creates powerful opportunities that remove financial and systemic barriers, allowing underserved Canadians to fully participate in the nation’s sports and cultural life.
+          </p>
+          <p className="text-gray-700 mb-4 text-center max-w-2xl mx-auto">
+            In communities like West Hill, many families cannot afford experiences most take for granted — from watching a live Raptors game to visiting the zoo. <span className="font-semibold text-blue-700">Access should not be a privilege. It should be a right.</span>
+          </p>
+          <p className="text-gray-700 mb-4 text-center max-w-2xl mx-auto">
+            <span className="font-semibold text-blue-700">In 2024, we proudly created 1,325 experiences for residents, including:</span>
+          </p>
+          <ul className="list-disc list-inside text-gray-700 mb-4 max-w-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
+            <li>455 kids in Summer Camp</li>
+            <li>125 children in March Break Camp</li>
+            <li>Live Toronto Blue Jays Games</li>
+            <li>Toronto Raptors Games</li>
+            <li>Golf Passes and Games</li>
+            <li>Toronto FC Live Games</li>
+            <li>Raptors 905 Live Games</li>
+            <li>Free Toronto Zoo Tickets</li>
+            <li>CNE Passes</li>
+            <li>Occasional VIP Suite Access and Group Bus Rides</li>
+          </ul>
+          <p className="text-gray-700 mb-4 text-center max-w-2xl mx-auto">
+            These activities reached low-income families, residents in shelters, Indigenous households, seniors, and those in Toronto’s priority neighborhoods—opening doors, building confidence, and giving children and families unforgettable memories of inclusion and joy.
+          </p>
+          <p className="text-gray-800 font-semibold text-center max-w-2xl mx-auto">
+            Thanks to our sponsors, donors, and partners, this vision becomes a reality year after year.
+          </p>
+        </div>
+        {/* Existing Impact Section Content */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-700 mb-2">OUR IMPACT</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-red-500 mx-auto"></div>

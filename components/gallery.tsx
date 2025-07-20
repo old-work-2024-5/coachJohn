@@ -6,6 +6,19 @@ import { ChevronLeft, ChevronRight, X, ImageIcon } from "lucide-react"
 
 // Sample gallery images - replace with your actual images
 const galleryImages = [
+  { id: 101, src: "/images/gallery/newPhotos1.jpeg", alt: "New photo 1" },
+  { id: 102, src: "/images/gallery/newPhotos2.jpeg", alt: "New photo 2" },
+  { id: 103, src: "/images/gallery/newPhotos3.jpeg", alt: "New photo 3" },
+  { id: 104, src: "/images/gallery/newPhotos4.jpeg", alt: "New photo 4" },
+  { id: 105, src: "/images/gallery/newPhotos5.jpeg", alt: "New photo 5" },
+  { id: 106, src: "/images/gallery/newPhotos6.jpeg", alt: "New photo 6" },
+  { id: 107, src: "/images/gallery/newPhotos7.jpeg", alt: "New photo 7" },
+  { id: 108, src: "/images/gallery/newPhotos8.jpeg", alt: "New photo 8" },
+  { id: 109, src: "/images/gallery/newPhotos9.jpeg", alt: "New photo 9" },
+  { id: 110, src: "/images/gallery/newPhotos10.jpeg", alt: "New photo 10" },
+  { id: 111, src: "/images/gallery/newPhotos11.jpeg", alt: "New photo 11" },
+  { id: 112, src: "/images/gallery/newPhotos12.jpeg", alt: "New photo 12" },
+  { id: 113, src: "/images/gallery/newPhotos13.jpeg", alt: "New photo 13" },
   { id: 1, src: "/images/community2.webp", alt: "Community event" },
   { id: 2, src: "/images/youth-program.webp", alt: "Youth program" },
   { id: 3, src: "/images/sports.webp", alt: "Sports activity" },
@@ -61,7 +74,7 @@ export default function Gallery() {
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-          {galleryImages.map((image, index) => (
+          {galleryImages.slice(0, 6).map((image, index) => (
             <div
               key={image.id}
               className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity transform hover:-translate-y-1 duration-300 shadow-md"

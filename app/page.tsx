@@ -53,7 +53,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header scrollToSection={scrollToSection} />
+      {/* <Header scrollToSection={scrollToSection} /> Removed duplicate header */}
       <HeroSection scrollToSection={scrollToSection} />
       {featuredEvents.length > 0 && <EventsBanner events={featuredEvents} />}
       <AboutSection />

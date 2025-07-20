@@ -7,11 +7,20 @@ import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft, Search, X, ChevronDown, ChevronRight, ChevronUp, ImageIcon } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button";
 
 // This function would be used to import all images from a directory
 // In a production environment, you would replace this with your actual image data
 const getGalleryImages = () => {
-  // Adjust the range to match the actual images in your folder
+  // New photos first
+  const newPhotos = Array.from({ length: 13 }, (_, i) => ({
+    id: 100 + i + 1,
+    src: `/images/gallery/newPhotos${i + 1}.jpeg`,
+    alt: `New photo ${i + 1}`,
+    category: "New Arrivals",
+  }));
+
+  // Existing images
   const imageStart = 14; // Starting image number
   const imageEnd = 56; // Ending image number
 
@@ -31,7 +40,7 @@ const getGalleryImages = () => {
         : "Senior Programs",
   }));
 
-  return images;
+  return [...newPhotos, ...images];
 };
 
 export default function GalleryPage() {
@@ -115,21 +124,16 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-white" onKeyDown={handleKeyDown}>
-      <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-        <div className="container flex h-16 items-center px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-blue-700">COACH JOHN</span>
-          </Link>
-          <div className="ml-auto">
-            <Link href="/" className="flex items-center text-sm font-medium hover:text-blue-600 transition-colors">
-              <ChevronLeft className="h-4 w-4 mr-1" />
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </header>
-
+      {/* Removed custom header, global Header is now used */}
       <main className="container px-4 py-8 md:px-6 md:py-12">
+        <div className="mb-6">
+          <Link href="/">
+            <Button variant="ghost" className="inline-flex items-center gap-2">
+              <ChevronLeft className="h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
         <div className="text-center mb-8 md:mb-12">
           <h1 className="text-3xl font-bold text-blue-700 mb-2">PHOTO GALLERY</h1>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-red-500 mx-auto"></div>

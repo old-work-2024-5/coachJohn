@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft, Calendar, Clock, MapPin, Download, ExternalLink } from "lucide-react"
 import { getActiveEvents, type Event } from "@/data/events"
+import { Button } from "@/components/ui/button";
 
 export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([])
@@ -26,21 +27,16 @@ export default function EventsPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
-        <div className="container flex h-16 items-center px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-blue-700">COACH JOHN</span>
-          </Link>
-          <div className="ml-auto">
-            <Link href="/" className="flex items-center text-sm font-medium hover:text-blue-600 transition-colors">
-              <ChevronLeft className="h-4 w-4 mr-1" />
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </header>
-
+      {/* Removed custom header, global Header is now used */}
       <main className="container px-4 py-8 md:px-6 md:py-12 flex-grow">
+        <div className="mb-6">
+          <Link href="/">
+            <Button variant="ghost" className="inline-flex items-center gap-2">
+              <ChevronLeft className="h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
+        </div>
         <div className="text-center mb-8 md:mb-12">
           <h1 className="text-3xl font-bold text-blue-700 mb-2">UPCOMING EVENTS</h1>
           <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-red-500 mx-auto"></div>
