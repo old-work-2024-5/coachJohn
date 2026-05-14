@@ -12,6 +12,7 @@ import {
   AboutSection,
   ProgramsSection,
   ImpactSection,
+  FandNSection,
   MediaSection,
   GallerySection,
   ContactSection,
@@ -60,6 +61,7 @@ export default function Home() {
       <PartnersSection />
       <ProgramsSection />
       <ImpactSection />
+      <FandNSection />
       {/* AWARDS & RECOGNITION Section */}
       <div id="awards-recognition" className="py-12 bg-gray-100">
         <h2 className="text-center text-2xl sm:text-3xl font-bold mb-4">

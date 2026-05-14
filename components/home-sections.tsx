@@ -1,11 +1,14 @@
 "use client";
 
 import type React from "react";
+import { useState, useEffect } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
 import {
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Zap,
   Users,
   Clock,
@@ -671,6 +674,103 @@ export function GallerySection() {
           >
             View Full Gallery
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function FandNSection() {
+  const total = 21;
+  const images = Array.from({ length: total }, (_, i) => ({
+    src: `/FandN/image2 (${i + 1}).jpeg`,
+    alt: `Food and Drinks photo ${i + 1}`,
+  }));
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToPrevious = () =>
+    setCurrentIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+
+  const goToNext = () =>
+    setCurrentIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+
+  return (
+    <section id="food-drinks" className="py-16 bg-white">
+      <div className="container px-4 md:px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-blue-700 mb-2">
+            FOOD &amp; DRINKS
+          </h2>
+          <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-red-500 mx-auto"></div>
+          <p className="text-gray-600 max-w-3xl mx-auto mt-4">
+            Bringing the community together through food and fellowship
+          </p>
+        </div>
+
+        <div className="relative max-w-3xl mx-auto">
+          <div className="relative aspect-video overflow-hidden rounded-xl shadow-lg bg-gray-100">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-700 ${
+                  index === currentIndex
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                }`}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={goToPrevious}
+            aria-label="Previous image"
+            className="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+
+          <button
+            onClick={goToNext}
+            aria-label="Next image"
+            className="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div className="flex justify-center gap-1.5 mt-4 flex-wrap">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                aria-label={`Go to image ${index + 1}`}
+                className={`h-2 w-2 rounded-full transition-colors ${
+                  index === currentIndex
+                    ? "bg-blue-600"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
+
+          <p className="text-center text-gray-400 text-sm mt-2">
+            {currentIndex + 1} / {total}
+          </p>
         </div>
       </div>
     </section>
