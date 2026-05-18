@@ -681,11 +681,40 @@ export function GallerySection() {
 }
 
 export function FandNSection() {
-  const total = 21;
-  const images = Array.from({ length: total }, (_, i) => ({
-    src: `/FandN/image2 (${i + 1}).jpeg`,
-    alt: `Food and Drinks photo ${i + 1}`,
-  }));
+  const images = [
+    { src: encodeURI("/FandN/img1.jpeg"), alt: "Food and Drinks photo 1" },
+    { src: encodeURI("/FandN/img2.jpeg"), alt: "Food and Drinks photo 2" },
+    {
+      src: encodeURI("/FandN/WhatsApp Image 2026-05-14 at 10.51.22 PM.jpeg"),
+      alt: "Food and Drinks photo 3",
+    },
+    {
+      src: encodeURI("/FandN/WhatsApp Image 2026-05-14 at 10.51.22 PM (1).jpeg"),
+      alt: "Food and Drinks photo 4",
+    },
+    {
+      src: encodeURI("/FandN/WhatsApp Image 2026-05-14 at 10.51.22 PM (2).jpeg"),
+      alt: "Food and Drinks photo 5",
+    },
+    {
+      src: encodeURI("/FandN/WhatsApp Image 2026-05-14 at 10.51.23 PM.jpeg"),
+      alt: "Food and Drinks photo 6",
+    },
+    {
+      src: encodeURI("/FandN/WhatsApp Image 2026-05-14 at 10.51.23 PM (1).jpeg"),
+      alt: "Food and Drinks photo 7",
+    },
+    {
+      src: encodeURI("/FandN/WhatsApp Image 2026-05-14 at 10.51.23 PM (2).jpeg"),
+      alt: "Food and Drinks photo 8",
+    },
+    {
+      src: encodeURI("/FandN/WhatsApp Image 2026-05-14 at 10.51.23 PM (3).jpeg"),
+      alt: "Food and Drinks photo 9",
+    },
+  ];
+
+  const total = images.length;
 
   const [currentIndex, setCurrentIndex] = useState(0);
 

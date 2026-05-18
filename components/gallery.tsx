@@ -4,27 +4,28 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, X, ImageIcon } from "lucide-react"
 
-// Sample gallery images - replace with your actual images
+const toSrc = (path: string) => encodeURI(path)
+
+// Home page preview gallery
 const galleryImages = [
-  { id: 101, src: "/images/gallery/newPhotos1.jpeg", alt: "New photo 1" },
-  { id: 102, src: "/images/gallery/newPhotos2.jpeg", alt: "New photo 2" },
-  { id: 103, src: "/images/gallery/newPhotos3.jpeg", alt: "New photo 3" },
-  { id: 104, src: "/images/gallery/newPhotos4.jpeg", alt: "New photo 4" },
-  { id: 105, src: "/images/gallery/newPhotos5.jpeg", alt: "New photo 5" },
-  { id: 106, src: "/images/gallery/newPhotos6.jpeg", alt: "New photo 6" },
-  { id: 107, src: "/images/gallery/newPhotos7.jpeg", alt: "New photo 7" },
-  { id: 108, src: "/images/gallery/newPhotos8.jpeg", alt: "New photo 8" },
-  { id: 109, src: "/images/gallery/newPhotos9.jpeg", alt: "New photo 9" },
-  { id: 110, src: "/images/gallery/newPhotos10.jpeg", alt: "New photo 10" },
-  { id: 111, src: "/images/gallery/newPhotos11.jpeg", alt: "New photo 11" },
-  { id: 112, src: "/images/gallery/newPhotos12.jpeg", alt: "New photo 12" },
-  { id: 113, src: "/images/gallery/newPhotos13.jpeg", alt: "New photo 13" },
-  { id: 1, src: "/images/community2.webp", alt: "Community event" },
-  { id: 2, src: "/images/youth-program.webp", alt: "Youth program" },
-  { id: 3, src: "/images/sports.webp", alt: "Sports activity" },
-  { id: 4, src: "/images/leadership.webp", alt: "Leadership training" },
-  { id: 5, src: "/images/seniors-program.webp", alt: "Seniors program" },
-  { id: 6, src: "/images/community.webp", alt: "Community gathering" },
+  {
+    id: 1,
+    src: toSrc("/communityDev/img.jpeg"),
+    alt: "Community development gathering",
+  },
+  {
+    id: 2,
+    src: toSrc("/communityDev/image2 (1).jpeg"),
+    alt: "Community development outreach",
+  },
+  {
+    id: 3,
+    src: toSrc("/FandN/WhatsApp Image 2026-05-14 at 10.51.22 PM.jpeg"),
+    alt: "Food and drinks community moment",
+  },
+  { id: 4, src: toSrc("/FandN/img1.jpeg"), alt: "Food and drinks service" },
+  { id: 5, src: toSrc("/youthLeadership/mainImage.jpg"), alt: "Youth leadership development" },
+  { id: 6, src: toSrc("/youthLeadership/imgg (1).jpg"), alt: "Youth leadership workshop" },
 ]
 
 export default function Gallery() {

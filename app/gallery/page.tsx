@@ -26,7 +26,7 @@ const getGalleryImages = () => {
 
   const images = Array.from({ length: imageEnd - imageStart + 1 }, (_, i) => ({
     id: i + 1,
-    src: `/images/gallery/image${imageStart + i}.webp`, // Adjusted to match your folder
+    src: `/images/gallery/image${imageStart + i}.webp`,
     alt: `Gallery image ${imageStart + i}`,
     category:
       (imageStart + i) % 5 === 0
@@ -40,7 +40,103 @@ const getGalleryImages = () => {
         : "Senior Programs",
   }));
 
-  return [...newPhotos, ...images];
+  const communityDevFiles = [
+    "img.jpeg",
+    "img2.jpeg",
+    "img3.jpeg",
+    "image2 (1).jpeg",
+    "image2 (2).jpeg",
+    "image2 (3).jpeg",
+    "image2 (4).jpeg",
+    "image2 (5).jpeg",
+    "image2 (6).jpeg",
+    "image2 (7).jpeg",
+    "image2 (8).jpeg",
+    "image2 (9).jpeg",
+    "image2 (10).jpeg",
+    "image2 (11).jpeg",
+    "image2 (12).jpeg",
+    "image2 (13).jpeg",
+    "image2 (14).jpeg",
+    "image2 (15).jpeg",
+    "image2 (16).jpeg",
+    "image2 (17).jpeg",
+    "image2 (18).jpeg",
+    "image2 (19).jpeg",
+    "image2 (20).jpeg",
+    "image2 (21).jpeg",
+  ];
+
+  const youthLeadershipFiles = [
+    "mainImage.jpg",
+    "img.jpeg",
+    "imgg (1).jpg",
+    "imgg (2).jpg",
+    "imgg (3).jpg",
+    "imgg (4).jpg",
+    "imgg (5).jpg",
+    "imgg (6).jpg",
+    "imgg (7).jpg",
+    "imgg (8).jpg",
+    "imgg (9).jpg",
+    "imgg (10).jpg",
+    "imgg (11).jpg",
+    "imgg (12).jpg",
+    "imgg (13).jpg",
+    "imgg (14).jpg",
+    "imgg (15).jpg",
+    "imgg (16).jpg",
+    "imgg (17).jpg",
+    "imgg (18).jpg",
+    "imgg (19).jpg",
+    "imgg (20).jpg",
+    "imgg (21).jpg",
+    "imgg (22).jpg",
+    "imgg (23).jpg",
+    "imgg (24).jpg",
+    "imgg (25).jpg",
+  ];
+
+  const foodAndDrinksFiles = [
+    "img1.jpeg",
+    "img2.jpeg",
+    "WhatsApp Image 2026-05-14 at 10.51.22 PM.jpeg",
+    "WhatsApp Image 2026-05-14 at 10.51.22 PM (1).jpeg",
+    "WhatsApp Image 2026-05-14 at 10.51.22 PM (2).jpeg",
+    "WhatsApp Image 2026-05-14 at 10.51.23 PM.jpeg",
+    "WhatsApp Image 2026-05-14 at 10.51.23 PM (1).jpeg",
+    "WhatsApp Image 2026-05-14 at 10.51.23 PM (2).jpeg",
+    "WhatsApp Image 2026-05-14 at 10.51.23 PM (3).jpeg",
+  ];
+
+  const communityDevImages = communityDevFiles.map((file, index) => ({
+    id: 1000 + index,
+    src: encodeURI(`/communityDev/${file}`),
+    alt: `Community development photo ${index + 1}`,
+    category: "Community Development",
+  }));
+
+  const youthLeadershipImages = youthLeadershipFiles.map((file, index) => ({
+    id: 2000 + index,
+    src: encodeURI(`/youthLeadership/${file}`),
+    alt: `Youth leadership photo ${index + 1}`,
+    category: "Youth Leadership Development",
+  }));
+
+  const foodAndDrinksImages = foodAndDrinksFiles.map((file, index) => ({
+    id: 3000 + index,
+    src: encodeURI(`/FandN/${file}`),
+    alt: `Food and drinks photo ${index + 1}`,
+    category: "Food and Drinks",
+  }));
+
+  return [
+    ...communityDevImages,
+    ...foodAndDrinksImages,
+    ...youthLeadershipImages,
+    ...newPhotos,
+    ...images,
+  ];
 };
 
 export default function GalleryPage() {
